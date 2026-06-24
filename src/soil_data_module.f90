@@ -48,6 +48,7 @@
         real :: bd = 1.3            !! Mg/m**3        |bulk density of the soil
         real :: awc = 0.2           !! mm H20/mm soil |available water capacity of soil layer
         real :: k = 10.0            !! mm/hr          |saturated hydraulic conductivity of soil layer. Index:(layer,HRU)
+        real :: k_lat = 10.0            !! mm/hr          |saturated hydraulic conductivity of soil layer. Index:(layer,HRU)
         real :: cbn = 2.0           !! %              |percent organic carbon in soil layer
         real :: clay = 10.          !! none           |fraction clay content in soil material (UNIT CHANGE!)
         real :: silt = 60.          !! %              |percent silt content in soil material 

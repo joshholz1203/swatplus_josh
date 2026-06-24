@@ -36,6 +36,7 @@
         real :: thick = 0.          !! mm           ! thickness of soil layer
         real :: bd = 0.             !! Mg/m**3      ! bulk density of the soil
         real :: k = 0.              !! mm/hr        ! saturated hydraulic conductivity of soil layer. Index:(layer,HRU)
+        real :: k_lat = 0.              !! mm/hr        ! saturated hydraulic conductivity of soil layer. Index:(layer,HRU)
         real :: cbn = 0.            !! mm/hr        ! percent organic carbon of soil layer
         real :: clay = 0.           !! %            ! percent clay content in soil material (UNIT CHANGE!)
         real :: silt = 0.           !! %            ! percent silt content in soil material
