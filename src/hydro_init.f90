@@ -130,8 +130,8 @@
         if (hru(j)%hyd%lat_ttime <= 0.) then
             scmx = 0.
             do l = 1, soil(j)%nly
-              if (soil(j)%phys(l)%k > scmx) then
-                scmx = soil(j)%phys(l)%k
+              if (soil(j)%phys(l)%k_lat > scmx) then
+                scmx = soil(j)%phys(l)%k_lat
               endif
             end do
             !! unit conversion:

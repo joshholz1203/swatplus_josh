@@ -37,6 +37,7 @@
       real :: sum_awc = 0.        !              |temporary sum to do weighted average with 
       real :: sum_cbn = 0.        !              |temporary sum to do weighted average with 
       real :: sum_k = 0.          !              |temporary sum to do weighted average with 
+      real :: sum_k_lat = 0.          !              |temporary sum to do weighted average with 
       real :: sum_clay = 0.       !              |temporary sum to do weighted average with 
       real :: sum_silt = 0.       !              |temporary sum to do weighted average with 
       real :: sum_sand = 0.       !              |temporary sum to do weighted average with 
@@ -82,6 +83,7 @@
           sol(isol)%phys(1)%bd = soildb(isol)%ly(1)%bd
           sol(isol)%phys(1)%awc = soildb(isol)%ly(1)%awc
           sol(isol)%phys(1)%k = soildb(isol)%ly(1)%k
+          sol(isol)%phys(1)%k_lat = soildb(isol)%ly(1)%k_lat
           sol(isol)%phys(1)%cbn = soildb(isol)%ly(1)%cbn
           sol(isol)%phys(1)%clay = soildb(isol)%ly(1)%clay
           sol(isol)%phys(1)%silt = soildb(isol)%ly(1)%silt
@@ -99,6 +101,7 @@
               sol(isol)%phys(j)%bd = soildb(isol)%ly(j-1)%bd
               sol(isol)%phys(j)%awc = soildb(isol)%ly(j-1)%awc
               sol(isol)%phys(j)%k = soildb(isol)%ly(j-1)%k
+              sol(isol)%phys(j)%k_lat = soildb(isol)%ly(j-1)%k_lat
               sol(isol)%phys(j)%cbn = soildb(isol)%ly(j-1)%cbn
               sol(isol)%phys(j)%clay = soildb(isol)%ly(j-1)%clay
               sol(isol)%phys(j)%silt = soildb(isol)%ly(j-1)%silt
@@ -117,6 +120,7 @@
               sol(isol)%phys(j)%bd = soildb(isol)%ly(j)%bd
               sol(isol)%phys(j)%awc = soildb(isol)%ly(j)%awc
               sol(isol)%phys(j)%k = soildb(isol)%ly(j)%k
+              sol(isol)%phys(j)%k_lat = soildb(isol)%ly(j)%k_lat
               sol(isol)%phys(j)%cbn = soildb(isol)%ly(j)%cbn
               sol(isol)%phys(j)%clay = soildb(isol)%ly(j)%clay
               sol(isol)%phys(j)%silt = soildb(isol)%ly(j)%silt
@@ -146,6 +150,7 @@
                 sol_mm_db(1)%ly(i)%bd = soildb(isol)%ly(j)%bd
                 sol_mm_db(1)%ly(i)%awc = soildb(isol)%ly(j)%awc
                 sol_mm_db(1)%ly(i)%k = soildb(isol)%ly(j)%k
+                sol_mm_db(1)%ly(i)%k_lat = soildb(isol)%ly(j)%k_lat
                 sol_mm_db(1)%ly(i)%cbn = soildb(isol)%ly(j)%cbn
                 sol_mm_db(1)%ly(i)%clay = soildb(isol)%ly(j)%clay
                 sol_mm_db(1)%ly(i)%silt = soildb(isol)%ly(j)%silt
@@ -229,7 +234,8 @@
             sum_bd = 0.     
             sum_awc = 0.    
             sum_cbn = 0.    
-            sum_k = 0.      
+            sum_k = 0.   
+            sum_k_lat=0.   
             sum_clay = 0.    
             sum_silt = 0.    
             sum_sand = 0.    
@@ -244,6 +250,7 @@
               sum_bd = sum_bd + sol_mm_db(1)%ly(j)%bd 
               sum_awc = sum_awc + sol_mm_db(1)%ly(j)%awc
               sum_k = sum_k + sol_mm_db(1)%ly(j)%k
+              sum_k_lat = sum_k_lat + sol_mm_db(1)%ly(j)%k_lat
               sum_cbn = sum_cbn + sol_mm_db(1)%ly(j)%cbn
               sum_clay = sum_clay + sol_mm_db(1)%ly(j)%clay
               sum_silt = sum_silt + sol_mm_db(1)%ly(j)%silt
@@ -259,6 +266,7 @@
             sol(isol)%phys(i)%bd = sum_bd/n
             sol(isol)%phys(i)%awc = sum_awc/n
             sol(isol)%phys(i)%k = sum_k/n
+            sol(isol)%phys(i)%k_lat = sum_k_lat/n
             sol(isol)%phys(i)%cbn = sum_cbn/n
             sol(isol)%phys(i)%clay = sum_clay/n
             sol(isol)%phys(i)%silt = sum_silt/n
