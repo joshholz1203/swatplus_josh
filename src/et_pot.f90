@@ -276,6 +276,8 @@
         pet_day = wst(iwst)%weat%pet
        case (4) !! CONSTANT DAILY PET (basin-wide)
         call pet_constant (pet_day)
+       case (5) !! joshs tolle pet
+        call pet_josh (pet_day)
   
       end select
        

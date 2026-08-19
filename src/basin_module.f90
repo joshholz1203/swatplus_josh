@@ -23,6 +23,7 @@
                    !! 2 = Hargreaves
                    !! 3 = read PET from file
                    !! 4 = constant (bsn_prm%pet_const)
+                   !! 5 = josh
         integer :: nam1 = 0      !! not used
         integer :: crk = 0       !! crack flow code 
                                  !!   1 = compute flow in cracks
